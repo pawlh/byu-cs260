@@ -32,3 +32,6 @@ Where _size_ is one of:
 - `4` - (by default) for classes that set the `margin` or `padding` to `$spacer * 1.5`
 - `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
 - `auto` - for classes that set the `margin` to auto
+
+### Selecting elements in JS
+`querySelector` - can do everything that `getElementById` can do, but also more. It can select elements by class, tag, or any other attribute. It can also select multiple elements at once.
