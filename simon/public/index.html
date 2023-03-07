@@ -29,9 +29,12 @@
         <form>
           <div class="form-group justify mb-3">
             <label for="nameInput">Name</label>
-            <input id="nameInput" class="form-control" type="text" placeholder="Your name here" />
+            <input id="nameInput"
+                   class="form-control input-needed"
+                   type="text"
+                   placeholder="Your name here" />
           </div>
-          <button class="btn btn-primary mx-auto">Login</button>
+          <button class="btn btn-primary mx-auto" disabled>Login</button>
         </form>
       </div>
     </div>
@@ -45,6 +48,32 @@
       <a href="https://github.com/pawlh/byu-cs260/tree/main/simon">GitHub</a>
     </div>
   </footer>
+
+<script>
+    const nameInput = document.getElementById('nameInput');
+    const loginButton = document.querySelector('button');
+
+    nameInput.addEventListener('input', () => {
+      if (nameInput.value.trim() === '') {
+        nameInput.classList.add('input-needed');
+        loginButton.disabled = true;
+      } else {
+        nameInput.classList.remove('input-needed');
+        loginButton.disabled = false;
+      }
+    });
+
+    loginButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        const name = nameInput.value;
+        if (name) {
+          localStorage.setItem('name', name);
+          window.location.href = 'play.html';
+        } else {
+
+        }
+    });
+</script>
 </body>
 
 </html>
