@@ -1,5 +1,5 @@
 // Set player name from local storage or prompt
-document.getElementById('player-name').textContent = localStorage.getItem('name') ?? prompt('What is your name?');
+document.getElementById('player-name').textContent = localStorage.getItem('name');
 
 const greenButton = document.getElementById('green-button')
 const redButton = document.getElementById('red-button')
