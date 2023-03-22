@@ -33,5 +33,32 @@ Where _size_ is one of:
 - `5` - (by default) for classes that set the `margin` or `padding` to `$spacer * 3`
 - `auto` - for classes that set the `margin` to auto
 
-### Selecting elements in JS
+## Selecting elements in JS
 `querySelector` - can do everything that `getElementById` can do, but also more. It can select elements by class, tag, or any other attribute. It can also select multiple elements at once.
+
+## Express
+
+I found the modular `Router` to be an interesting way of mounting endpoints, especially for when the number of endpoints gets larger. I like the idea of having an `api/` directory with each subtype of api being housed in its own JS file
+
+Here is a reference to the methods available on the `response` objects:
+
+```
+res.download()   - Prompt a file to be downloaded.
+res.end()        - End the response process.
+res.json()	     - Send a JSON response.
+res.jsonp()	     - Send a JSON response with JSONP support.
+res.redirect()   - Redirect a request.
+res.render()     - Render a view template.
+res.send()       - Send a response of various types.
+res.sendFile()   - Send a file as an octet stream.
+res.sendStatus() - Set the response status code and send its string representation as the response body.
+```  
+
+## cURL
+
+I pretty much only ever use Postman to make HTTP requests, but it seems that `curl` isn't as hard as I've always thought it was:
+
+```
+-X (or --request) <method>
+-d (or --data) "<any string of ascii chars>"
+```
