@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  simon-app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "9000:3000"
