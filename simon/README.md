@@ -62,3 +62,33 @@ I pretty much only ever use Postman to make HTTP requests, but it seems that `cu
 -X (or --request) <method>
 -d (or --data) "<any string of ascii chars>"
 ```
+
+## MongoDB
+
+### Useful functions
+
+- insertOne(): Inserts a single document into a collection.
+- insertMany(): Inserts multiple documents into a collection.
+- updateOne(): Updates a single document that matches a specified filter.
+- updateMany(): Updates multiple documents that match a specified filter.
+- deleteOne(): Deletes a single document that matches a specified filter.
+- deleteMany(): Deletes multiple documents that match a specified filter.
+- find(): Returns a cursor to the documents in a collection that match a specified filter.
+- findOne(): Returns the first document in a collection that matches a specified filter.
+
+### Updating a document
+
+Updating documents is pretty different from SQL. In SQL, you would use an `UPDATE` statement to update a document. In MongoDB, you would use the `updateOne()` or `updateMany()` methods. The arguments for these methods are pretty different as well, taking in a filter and an update document. The filter is used to find the document to update, and the update arg is used to specify the updates to apply to the document.
+
+Update Notes ([from the docs](https://www.mongodb.com/docs/manual/reference/operator/update/#fields)):
+``` 
+$currentDate - Sets the value of a field to current date, either as a Date or a Timestamp.
+$inc - Increments the value of the field by the specified amount.
+$min - Only updates the field if the specified value is less than the existing field value.
+$max - Only updates the field if the specified value is greater than the existing field value.
+$mul - Multiplies the value of the field by the specified amount.
+$rename - Renames a field.
+$set - Sets the value of a field in a document.
+$setOnInsert - Sets the value of a field if an update results in an insert of a document. Has no effect on update operations that modify existing documents.
+$unset - Removes the specified field from a document.
+```
