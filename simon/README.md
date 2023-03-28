@@ -92,3 +92,19 @@ $set - Sets the value of a field in a document.
 $setOnInsert - Sets the value of a field if an update results in an insert of a document. Has no effect on update operations that modify existing documents.
 $unset - Removes the specified field from a document.
 ```
+
+## Authentication
+
+### OAuth, OpenID, and SAML
+
+Usually if I try to include authentication in a project, I end up just reinventing the wheel. I've never really seriously looked into OAuth, OpenID, or SAML. I found [this page](https://www.okta.com/identity-101/whats-the-difference-between-oauth-openid-connect-and-saml/) from OKta pretty helpful in understanding the differences between the three. Although it is probably a little too much for the smaller projects that I usually work on, OpenID seems like it would be a generally good choice for future projects.
+
+### Cookie options
+
+I did not know about the server-side options for configuring cookies, but it seems like a really useful tool!
+
+```
+- httpOnly: true - prevents client-side JS from reading the cookie
+- secure: true - only send the cookie over HTTPS
+- sameSite: true - prevents the cookie from being sent with requests initiated by third-party websites
+```
