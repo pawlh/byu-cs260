@@ -108,3 +108,21 @@ I did not know about the server-side options for configuring cookies, but it see
 - secure: true - only send the cookie over HTTPS
 - sameSite: true - prevents the cookie from being sent with requests initiated by third-party websites
 ```
+
+## WebSockets
+
+WebSockets are definitely a step up from manually pinging the server for updates. I've never really used them before, but thankfully from MSDN it looks like there isn't too much to it:
+
+### Frontend
+- Create a new WebSocket connection by creating a new instance of the WebSocket class.
+- Listen for the open event to confirm the connection has been established.
+- Use the send method to send messages to the server.
+- Listen for the message event to handle incoming messages from the server.
+- Listen for the close event to handle connection closure.
+- Use the close method to close the WebSocket connection.
+
+### Backend
+- Install the ws package: npm install ws
+- Create a new WebSocket server by creating a new instance of the WebSocket.Server class and attaching it to an HTTP server.
+- Listen for the connection event to handle incoming connections.
+- Use the ws object to handle incoming messages and send outgoing messages.
