@@ -126,3 +126,10 @@ WebSockets are definitely a step up from manually pinging the server for updates
 - Create a new WebSocket server by creating a new instance of the WebSocket.Server class and attaching it to an HTTP server.
 - Listen for the connection event to handle incoming connections.
 - Use the ws object to handle incoming messages and send outgoing messages.
+
+### React
+Some gotchas I ran into with React:
+1. useEffect will run on every render, so you need to pass in an empty array as the second argument to make it only run on mount.
+2. Not used for this project, but nested routes are a little weird. https://dev.to/tywenk/how-to-use-nested-routes-in-react-router-6-4jhd
+3. Protecting routes in React seems like it is tricker than it should be. I really like the way that route guards work in Vue, but I couldn't find a way to do it in React. I found a solution that feel pretty clean from https://blog.netcetera.com/how-to-create-guarded-routes-for-your-react-app-d2fe7c7b6122 which suggests just wrapping authenticated routes in a component that checks if the user is authenticated and redirects them if they are not.
+4. Not a gotcha, but SPAs are pretty great. I have a hard time imagining not using a library or framework for web development of pretty much any complexity. 
